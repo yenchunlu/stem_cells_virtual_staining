@@ -148,11 +148,11 @@ if __name__ == "__main__":
             best_valid_loss = valid_loss
             torch.save(model.state_dict(), checkpoint_path)
 
-        jaccard = metric_score[0]/len(train_X)
-        f1 = metric_score[1]/len(train_X)
-        recall = metric_score[2]/len(train_X)
-        precision = metric_score[3]/len(train_X)
-        acc = metric_score[4]/len(train_X)
+        jaccard = metric_score[0]/(len(train_X)/batch_size)
+        f1 = metric_score[1]/(len(train_X)/batch_size)
+        recall = metric_score[2]/(len(train_X)/batch_size)
+        precision = metric_score[3]/(len(train_X)/batch_size)
+        acc = metric_score[4]/(len(train_X)/batch_size)
 
 
         end_time = time.time()
