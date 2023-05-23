@@ -160,6 +160,6 @@ if __name__ == "__main__":
 
         data_str = f'Epoch: {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s\n'
         data_str += f'\tTrain Loss: {train_loss:.3f}\n'
-        data_str += f'\tTrain:\n\tJaccard: {jaccard:1.4f} - F1: {f1:1.4f} - Recall: {recall:1.4f} - Precision: {precision:1.4f} - Acc: {acc:1.4f}\n'
-        data_str += f'\t Val. Loss: {valid_loss:.3f}\n'
+        data_str += f'\t Jaccard: {jaccard:1.4f} - F1: {f1:1.4f} - Recall: {recall:1.4f} - Precision: {precision:1.4f} - Acc: {acc:1.4f}\n'
+        data_str += f'\tVal. Loss: {valid_loss:.3f}\n'
         print(data_str)
