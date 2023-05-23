@@ -41,6 +41,7 @@ def train(model, loader, optimizer, loss_fn, device):
     epoch_loss = 0.0
 
     model.train()
+    metrics_score = [0.0, 0.0, 0.0, 0.0, 0.0]
     for x, y in loader:
         x = x.to(device, dtype=torch.float32)
         y = y.to(device, dtype=torch.float32)
@@ -48,7 +49,6 @@ def train(model, loader, optimizer, loss_fn, device):
         optimizer.zero_grad()
         y_pred = model(x)
         score = calculate_metrics(y, y_pred)
-        metrics_score = [0.0, 0.0, 0.0, 0.0, 0.0]
         metrics_score = list(map(add, metrics_score, score))
 
         loss = loss_fn(y_pred, y)
