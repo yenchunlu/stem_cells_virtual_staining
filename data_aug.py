@@ -11,11 +11,11 @@ def create_dir(path):
         os.makedirs(path)
 
 def load_data(path):
-    train_X = sorted(glob(os.path.join(path,"training","images","*.jpg")))
-    train_y = sorted(glob(os.path.join(path,"training","masks","*.jpg")))
+    train_X = sorted(glob(os.path.join(path,"training","images","*")))
+    train_y = sorted(glob(os.path.join(path,"training","masks","*")))
     
-    test_X = sorted(glob(os.path.join(path,"test","images","*.jpg")))
-    test_y = sorted(glob(os.path.join(path,"test","masks","*.jpg")))
+    test_X = sorted(glob(os.path.join(path,"test","images","*")))
+    test_y = sorted(glob(os.path.join(path,"test","masks","*")))
 
     return (train_X, train_y), (test_X, test_y)
 
